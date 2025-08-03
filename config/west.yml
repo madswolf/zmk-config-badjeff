@@ -18,33 +18,6 @@ manifest:
     - name: zmk-analog-input-driver
       remote: badjeff
       revision: main
-    - name: zmk-behavior-insomnia
-      remote: badjeff
-      revision: main
-    - name: zmk-behavior-key-press-lip
-      remote: badjeff
-      revision: main
-    - name: zmk-behavior-key-tempo
-      remote: badjeff
-      revision: main
-    - name: zmk-behavior-mouse-key-toggle
-      remote: badjeff
-      revision: main
-    # - name: zmk-input-behavior-listener
-    #   remote: badjeff
-    #   revision: main
-    - name: zmk-output-behavior-listener
-      remote: badjeff
-      revision: main
-    # - name: zmk-hid-io
-    #   remote: badjeff
-    #   revision: main
-    # - name: zmk-split-peripheral-input-relay
-    #   remote: badjeff
-    #   revision: main
-    # - name: zmk-split-peripheral-output-relay
-    #   remote: badjeff
-    #   revision: main
     - name: zmk-split-peripheral-bonding-tweak
       remote: badjeff
       revision: main
