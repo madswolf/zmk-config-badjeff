@@ -83,60 +83,6 @@
                     , <INPUT_REL_Y INPUT_REL_WHEEL>;
         };
 
-        tball0_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&tball0_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                                        , <&xy_scaler 1 25>, <&x_scaler 0 1>
-                                        , <&to_wheel>;
-                };
-        };
-
-        tball1_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&tball1_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                                        , <&xy_scaler 1 25>, <&x_scaler 0 1>
-                                        , <&to_wheel>;
-                };
-        };
-
-        tball2_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&tball2_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                                        , <&xy_scaler 1 25>, <&x_scaler 0 1>
-                                        , <&to_wheel>;
-                };
-        };
-
         tpoint0_mmv_il {
                 compatible = "zmk,input-listener";
                 device = <&tpoint0_split>;
@@ -151,60 +97,6 @@
                         layers = <MSC>;
                         process-next;
                         input-processors = <&xy_scaler 1 22>, <&x_scaler 0 1>
-                                         , <&to_wheel>;
-                };
-        };
-
-        tpad0_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&tpad0_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>
-                                 , <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_scaler 1 22>, <&x_scaler 0 1>
-                                         , <&to_wheel>;
-                };
-        };
-
-        mou0_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&mou0_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>
-                                 , <&xy_transf (INPUT_TRANSFORM_X_INVERT | INPUT_TRANSFORM_Y_INVERT)>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_scaler 1 40>, <&x_scaler 0 1>
-                                         , <&to_wheel>;
-                };
-        };
-
-        mou1_mmv_il {
-                compatible = "zmk,input-listener";
-                device = <&mou1_split>;
-                input-processors = <&zip_zxy>, <&zip_report_rate_limit 8>;
-                precise {
-                        layers = <NUM>;
-                        process-next;
-                        input-processors = <&xy_scaler 2 3>;
-                };
-                scroll {
-                        layers = <MSC>;
-                        process-next;
-                        input-processors = <&xy_transf (INPUT_TRANSFORM_Y_INVERT)>
-                                         , <&xy_scaler 1 40>, <&x_scaler 0 1>
                                          , <&to_wheel>;
                 };
         };
@@ -228,16 +120,6 @@
                         flavor = "tap-preferred"; bindings = <&mo>, <&kp>;
                         display-name = "hold-layer";
                 };
-                //kg: key_press_tap_toggle {
-                //        compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>;
-                //        tapping-term-ms = <200>; quick-tap-ms = <200>;
-                //        flavor = "tap-preferred"; bindings = <&kp>, <&tog>;
-                //};
-                //mkg: hold_mouse_key_press_tap_toggle {
-                //        compatible = "zmk,behavior-hold-tap"; #binding-cells = <2>;
-                //        tapping-term-ms = <200>; quick-tap-ms = <200>;
-                //        flavor = "tap-preferred"; bindings = <&mkp>, <&tog>;
-                //};
                 m_v: mouse_move {
                         compatible = "zmk,behavior-input-two-axis";
                         #binding-cells = <1>;
@@ -271,15 +153,6 @@
                         bindings = <&ec_s MOVE_Y(-17)>, <&ec_s MOVE_Y(17)>;
                         tap-ms = <65>;
                 };
-        };
-
-        mmv_input_listener {
-                compatible = "zmk,input-listener";
-                device = <&m_v>;
-        };
-        mms_input_listener {
-                compatible = "zmk,input-listener";
-                device = <&m_s>;
         };
 
         //   0   1   2   3   4     5   6   7   8   9  <-- split keyboard
