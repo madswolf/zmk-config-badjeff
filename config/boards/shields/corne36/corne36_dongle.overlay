@@ -15,16 +15,4 @@
 	/delete-property/ col-gpios;
 };
 
-/{
-	chosen {
-		zmk,battery = &vbatt;
-	};
-	vbatt: vbatt {
-		compatible = "zmk,battery-voltage-divider";
-		io-channels = <&adc 2>;
-		output-ohms = <2000000>;
-		full-ohms = <(2000000 + 806000)>;
-	};
-};
-
 #include "corne36_zplit.dtsi"
